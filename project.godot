@@ -11,5 +11,11 @@ config_version=5
 [application]
 
 config/name="CSC355Game2"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://images/icon.svg"
+config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://images/menu/fancy_cursor.png"

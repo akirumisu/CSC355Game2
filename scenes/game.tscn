@@ -1,0 +1,233 @@
+[gd_scene load_steps=2 format=3 uid="uid://brujqvqnwjp0s"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_s5sn7"]
+
+[node name="game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5sn7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="PlayerValues" type="GridContainer" parent="."]
+offset_right = 67.0
+offset_bottom = 77.0
+columns = 2
+
+[node name="TotalMoneyText" type="Label" parent="PlayerValues"]
+layout_mode = 2
+text = "Money: "
+
+[node name="TotalMoneyValue" type="Label" parent="PlayerValues"]
+layout_mode = 2
+
+[node name="ProfitText" type="Label" parent="PlayerValues"]
+layout_mode = 2
+text = "Profit: "
+
+[node name="ProfitValue" type="Label" parent="PlayerValues"]
+layout_mode = 2
+
+[node name="StockText" type="Label" parent="PlayerValues"]
+layout_mode = 2
+text = "Stock: "
+
+[node name="StockValue" type="Label" parent="PlayerValues"]
+layout_mode = 2
+
+[node name="GameValues" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_bottom = 50.0
+grow_horizontal = 0
+columns = 2
+
+[node name="YearText" type="Label" parent="GameValues"]
+layout_mode = 2
+text = "Year: "
+
+[node name="YearValue" type="Label" parent="GameValues"]
+layout_mode = 2
+
+[node name="Intro" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IntroText" type="RichTextLabel" parent="Intro"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Introduction."
+
+[node name="IntroButton" type="Button" parent="Intro"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -98.0
+offset_right = 39.5
+offset_bottom = -66.9999
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+
+[node name="Choice" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoiceText" type="RichTextLabel" parent="Choice"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is an example choice."
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="Choice"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChoiceButton1" type="Button" parent="Choice/ButtonsContainer"]
+layout_mode = 2
+
+[node name="ChoiceButton2" type="Button" parent="Choice/ButtonsContainer"]
+layout_mode = 2
+
+[node name="ChoiceButton3" type="Button" parent="Choice/ButtonsContainer"]
+layout_mode = 2
+
+[node name="Summary" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SummaryText" type="RichTextLabel" parent="Summary"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This is an example summary."
+
+[node name="ContinueButton" type="Button" parent="Summary"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -98.0
+offset_right = 39.5
+offset_bottom = -66.9997
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+
+[node name="Ending" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndingText" type="RichTextLabel" parent="Ending"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ending Text"
+
+[node name="EndingButton" type="Button" parent="Ending"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -98.0
+offset_right = 48.0
+offset_bottom = -66.9999
+grow_horizontal = 2
+grow_vertical = 0
+text = "Main Menu"
+
+[connection signal="pressed" from="Intro/IntroButton" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="Choice/ButtonsContainer/ChoiceButton1" to="." method="_on_choice_button_1_pressed"]
+[connection signal="pressed" from="Choice/ButtonsContainer/ChoiceButton2" to="." method="_on_choice_button_2_pressed"]
+[connection signal="pressed" from="Choice/ButtonsContainer/ChoiceButton3" to="." method="_on_choice_button_3_pressed"]
+[connection signal="pressed" from="Summary/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Ending/EndingButton" to="." method="_on_ending_button_pressed"]
