@@ -37,11 +37,11 @@ text = "Money: "
 [node name="TotalMoneyValue" type="Label" parent="PlayerValues"]
 layout_mode = 2
 
-[node name="IncomeText" type="Label" parent="PlayerValues"]
+[node name="ProfitText" type="Label" parent="PlayerValues"]
 layout_mode = 2
 text = "Profit: "
 
-[node name="IncomeValue" type="Label" parent="PlayerValues"]
+[node name="ProfitValue" type="Label" parent="PlayerValues"]
 layout_mode = 2
 
 [node name="StockText" type="Label" parent="PlayerValues"]
@@ -92,6 +92,8 @@ anchor_bottom = 1.0
 offset_top = -30.0
 grow_horizontal = 2
 grow_vertical = 0
+min_value = -10.0
+max_value = 1.0
 show_percentage = false
 
 [node name="Intro" type="Control" parent="."]
