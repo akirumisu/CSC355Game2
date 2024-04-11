@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://brujqvqnwjp0s"]
+[gd_scene load_steps=7 format=3 uid="uid://brujqvqnwjp0s"]
 
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_s5sn7"]
 [ext_resource type="Script" path="res://scripts/choice_script.gd" id="2_6ntu6"]
+[ext_resource type="AudioStream" uid="uid://cm8p0h8gcor3x" path="res://sounds/turn_key1.ogg" id="3_3pca4"]
+[ext_resource type="AudioStream" uid="uid://ct5mp21muw322" path="res://sounds/nature-in-spring-in-the-city-park-with-birds-and-background-noise.ogg" id="3_ei4kb"]
+[ext_resource type="AudioStream" uid="uid://ef6dueo2acqr" path="res://sounds/turn_key2.ogg" id="4_rnbbw"]
+[ext_resource type="AudioStream" uid="uid://becdywfqa2las" path="res://sounds/urban-park-ambiance-loop.ogg" id="4_uyqji"]
 
 [node name="game" type="Control"]
 layout_mode = 3
@@ -25,9 +29,11 @@ grow_vertical = 2
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
 [node name="PlayerValues" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 67.0
-offset_bottom = 77.0
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 77.0
+offset_bottom = 87.0
 columns = 2
 
 [node name="TotalMoneyText" type="Label" parent="PlayerValues"]
@@ -56,8 +62,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -44.0
-offset_bottom = 50.0
+offset_left = -97.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = 60.0
 grow_horizontal = 0
 columns = 2
 
@@ -110,13 +118,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -50.0
-offset_right = 250.0
-offset_bottom = 50.0
+offset_left = -375.0
+offset_top = -194.0
+offset_right = 375.0
+offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Introduction."
+text = "You are the CEO of a multi-national food processing company. This company is one of the most profitable in the world, and as such, you will be able to make many different choices without worrying about budget. Each year, you will be presented with a problem and a choice. Your choices affect the companies total money, profit, stock price, and the environment's health.
+
+If the environment's health reaches 0, the game ends immediately. Otherwise, the game continues until the year 2040.
+
+You can use the hotkey [space] or [enter] for the continue button. You can use [1], [2], and [3] for choices 1, 2, and 3."
 
 [node name="IntroButton" type="Button" parent="Intro"]
 layout_mode = 1
@@ -126,9 +138,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -39.5
-offset_top = -98.0
+offset_top = -198.0
 offset_right = 39.5
-offset_bottom = -66.9999
+offset_bottom = -167.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Continue"
@@ -150,27 +162,41 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -50.0
-offset_right = 250.0
-offset_bottom = 50.0
+offset_left = -375.0
+offset_top = -174.0
+offset_right = 375.0
+offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "This is an example choice."
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="Choice"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -24.0
+offset_right = 375.0
+offset_bottom = 76.0001
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ChoiceButton1" type="Button" parent="Choice/ButtonsContainer"]
 layout_mode = 2
 
+[node name="Control1" type="MarginContainer" parent="Choice/ButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="ChoiceButton2" type="Button" parent="Choice/ButtonsContainer"]
 layout_mode = 2
+
+[node name="Control2" type="MarginContainer" parent="Choice/ButtonsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="ChoiceButton3" type="Button" parent="Choice/ButtonsContainer"]
 layout_mode = 2
@@ -192,10 +218,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -50.0
-offset_right = 250.0
-offset_bottom = 50.0
+offset_left = -375.0
+offset_top = -174.0
+offset_right = 375.0
+offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "This is an example summary."
@@ -208,9 +234,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -39.5
-offset_top = -98.0
+offset_top = -198.0
 offset_right = 39.5
-offset_bottom = -66.9997
+offset_bottom = -167.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Continue"
@@ -240,7 +266,7 @@ offset_top = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EndingText" type="RichTextLabel" parent="Ending"]
+[node name="EndingText1" type="RichTextLabel" parent="Ending"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -269,6 +295,24 @@ offset_bottom = -66.9999
 grow_horizontal = 2
 grow_vertical = 0
 text = "Main Menu"
+
+[node name="ChoiceButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3pca4")
+volume_db = -20.0
+
+[node name="NextButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rnbbw")
+volume_db = -25.0
+
+[node name="GoodMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ei4kb")
+volume_db = -30.0
+autoplay = true
+
+[node name="BadMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uyqji")
+volume_db = -80.0
+autoplay = true
 
 [connection signal="pressed" from="Intro/IntroButton" to="." method="_on_intro_button_pressed"]
 [connection signal="pressed" from="Choice/ButtonsContainer/ChoiceButton1" to="." method="_on_choice_button_1_pressed"]
