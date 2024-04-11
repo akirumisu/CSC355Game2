@@ -7,6 +7,7 @@ var year := 2024;
 
 var environment := 90.0;
 var environmentRegen := 0.0;
+var environmentColor;
 
 var prefix = [[1,"%10.2f"],[1e3,"%10.3fK"],
 		[1e6,"%10.3fM"],[1e9,"%10.3fB"],
@@ -16,7 +17,11 @@ var maxYear := 2040;
 var minEnvironment := 0.0;
 var maxEnvironment := 100.0;
 
+var timeElapsed := 0.0;
+
 @onready var ChoiceScript = $"ChoiceScript"
+
+@onready var BackgroundColor = $"BackgroundColor"
 
 @onready var TotalMoneyValue = $"PlayerValues/TotalMoneyValue"
 @onready var IncomeValue = $"PlayerValues/IncomeValue"
@@ -48,8 +53,9 @@ var maxEnvironment := 100.0;
 @onready var BadMusic = $"BadMusic"
 
 func _ready():
-	print_debug("New Game Started")
+	print_debug("New Game Started @ ",Time.get_time_string_from_system())
 	NextButtonSound.play()
+	timeElapsed = Time.get_ticks_msec()
 	Intro.visible = true
 	update_text_values()
 
@@ -85,6 +91,8 @@ func generate_choice():
 	ChoiceButton2.text = ChoiceScript.choiceOptionsArray[year-2024][1][0]
 	ChoiceButton3.text = ChoiceScript.choiceOptionsArray[year-2024][2][0]
 	
+	timeElapsed = Time.get_ticks_msec()
+	
 	update_text_values()
 	Choice.visible = true
 
@@ -110,18 +118,23 @@ func process_choice(choiceNumber):
 	
 	SummaryText.text = choiceResultText
 	
+	environmentColor = int((1-(environment/maxEnvironment))*100)
+	BackgroundColor.color = Color8(100+environmentColor, 100, 100, 255)
+	
 	GoodMusic.set_volume_db((environment/maxEnvironment * 50) - 65)
 	BadMusic.set_volume_db(((1-environment/maxEnvironment) * 50) - 60)
 	
-	print("\nYear: ",year," Choice: ",choiceNumber+1)
+	timeElapsed = (Time.get_ticks_msec() - timeElapsed)
+	
+	print("\nTime: ",timeElapsed/1000," Year: ",year," Choice: ",choiceNumber+1)
 	print(ChoiceScript.summaryOptionsArray[year-2024][choiceNumber])
-	print("  Money:",update_value_prefix(totalMoney),"  Profit: ",update_value_prefix(income),"  Stock: ",update_value_prefix(stock),"  Environment: ",environment)
+	print("Money:",update_value_prefix(totalMoney),"  Profit: ",update_value_prefix(income),"  Stock: ",update_value_prefix(stock),"  Environment: ",environment)
 	
 	update_text_values()
 	Summary.visible = true
 
 func trigger_ending():
-	print_debug("\nGame Has Ended")
+	print_debug("\nGame Has Ended @ ",Time.get_time_string_from_system())
 	ChoiceButtonSound.play()
 	# code
 	update_text_values()

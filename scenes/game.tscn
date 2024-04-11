@@ -19,14 +19,14 @@ script = ExtResource("1_s5sn7")
 [node name="ChoiceScript" type="Node" parent="."]
 script = ExtResource("2_6ntu6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.392157, 0.392157, 0.392157, 1)
+color = Color(0.431373, 0.392157, 0.392157, 1)
 
 [node name="PlayerValues" type="GridContainer" parent="."]
 layout_mode = 1
@@ -279,13 +279,13 @@ offset_right = 425.0
 offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Throughout this game, you have played the role of a CEO operating a large company. Every choice has been based on real world choices companies must make all the time.
+text = "Throughout this game, you have played the role of a CEO operating a large company. Every choice is made to be realistic, and a choice companies make every year.
 
 Some of these choices are a tough balance between profits and the environment. Other choices are simply low-hanging fruit for reducing carbon emissions. Unfortunately, most companies stick to the choices that keep them up with competitiors no matter how detrimental they are to the environment. Harmful effects to the environment subsequently hurt companies and their potential customers in the long-term.
 
 As we head into the future and more companies commit to a net zero policy, competitiors in the sector will be forced to switch as well or risk boycotts and targeted fees. However, companies that profit off of coal and natural gasses cannot be net zero by nature. The only way to reduce the environmental impact from these companies is to reduce reliance on coal and natural gasses to put them out of business.
 
-Inspiration: Nestlé, ExxonMobil, Fiji Water"
+Inspiration: Nestlé, ExxonMobil, & Fiji Water"
 
 [node name="EndingButton" type="Button" parent="Ending"]
 layout_mode = 1
