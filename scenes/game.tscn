@@ -124,7 +124,7 @@ offset_right = 375.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You are the CEO of a multi-national food processing company. This company is one of the most profitable in the world, and as such, you will be able to make many different choices without worrying about budget. Each year, you will be presented with a problem and a choice. Your choices affect the companies total money, profit, stock price, and the environment's health.
+text = "You are the CEO of a multi-national food processing company. This company is one of the most profitable in the world, and as such, you will be able to make many different choices without worrying about budget. Each year, you will be presented with a problem and a choice. Your choices affect the company's total money, profit, stock price, and the environment's health.
 
 If the environment's health reaches 0, the game ends immediately. Otherwise, the game continues until the year 2040.
 
@@ -281,9 +281,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Throughout this game, you have played the role of a CEO operating a large company. Every choice is made to be realistic, and a choice companies make every year.
 
-Some of these choices are a tough balance between profits and the environment. Other choices are simply low-hanging fruit for reducing carbon emissions. Unfortunately, most companies stick to the choices that keep them up with competitiors no matter how detrimental they are to the environment. Harmful effects to the environment subsequently hurt companies and their potential customers in the long-term.
+Some of these choices are a tough balance between profits and the environment. Other choices are simply low-hanging fruit for reducing carbon emissions. Unfortunately, most companies stick to the choices that keep them up with competitors no matter how detrimental they are to the environment. Harmful effects on the environment subsequently hurt companies and their potential customers in the long term.
 
-As we head into the future and more companies commit to a net zero policy, competitiors in the sector will be forced to switch as well or risk boycotts and targeted fees. However, companies that profit off of coal and natural gasses cannot be net zero by nature. The only way to reduce the environmental impact from these companies is to reduce reliance on coal and natural gasses to put them out of business.
+As we head into the future and more companies commit to a net zero policy, competitors in the sector will be forced to switch as well or risk boycotts and targeted fees. However, companies that profit off of coal and natural gasses cannot be net zero by nature. The only way to reduce the environmental impact of these companies is to reduce reliance on coal and natural gasses to put them out of business.
 
 Inspiration: Nestlé, ExxonMobil, & Fiji Water"
 

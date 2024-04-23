@@ -76,7 +76,7 @@ func _process(_delta):
 				Summary.visible = false
 				year += 1
 				environment += environmentRegen
-				if (year >= maxYear or environment < minEnvironment):
+				if (year >= maxYear or environment <= minEnvironment):
 					trigger_ending()
 				else:
 					generate_choice()
@@ -169,7 +169,7 @@ func _on_continue_button_pressed():
 	year += 1
 	environment += environmentRegen
 	
-	if (year >= maxYear or environment < minEnvironment):
+	if (year >= maxYear or environment <= minEnvironment):
 		trigger_ending()
 	else:
 		generate_choice()
